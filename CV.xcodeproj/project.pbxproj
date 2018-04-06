@@ -14,9 +14,6 @@
 		6F2ED3022019D3F8006CF6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F2ED3012019D3F8006CF6D8 /* Assets.xcassets */; };
 		6F2ED3052019D3F8006CF6D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F2ED3032019D3F8006CF6D8 /* LaunchScreen.storyboard */; };
 		6F2ED3102019D3F8006CF6D8 /* CVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2ED30F2019D3F8006CF6D8 /* CVTests.swift */; };
-		6F4A027C201A45800026393B /* KMFButtons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4A027B201A45800026393B /* KMFButtons.framework */; };
-		6F4A027D201A45860026393B /* KMFButtons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4A027B201A45800026393B /* KMFButtons.framework */; };
-		6F4A027E201A45860026393B /* KMFButtons.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4A027B201A45800026393B /* KMFButtons.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6FEDFDEC201B84F200FE3912 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEDFDEB201B84F200FE3912 /* MainView.swift */; };
 		6FEDFDEE201E7FDC00FE3912 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FEDFDED201E7FDB00FE3912 /* GoogleService-Info.plist */; };
 		D52A0D0135CE6CE89192FBB9 /* Pods_CVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E017D099A2808F30FF5A17A /* Pods_CVTests.framework */; };
@@ -31,20 +28,6 @@
 			remoteInfo = CV;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		6F2ED3462019D848006CF6D8 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				6F4A027E201A45860026393B /* KMFButtons.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		108F2DF2193FECA7BCCDE436 /* Pods_CV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,8 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F4A027C201A45800026393B /* KMFButtons.framework in Frameworks */,
-				6F4A027D201A45860026393B /* KMFButtons.framework in Frameworks */,
 				38EB3E11408D0F8C7BC6E1A1 /* Pods_CV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,7 +147,6 @@
 				6F2ED2F32019D3F7006CF6D8 /* Sources */,
 				6F2ED2F42019D3F7006CF6D8 /* Frameworks */,
 				6F2ED2F52019D3F7006CF6D8 /* Resources */,
-				6F2ED3462019D848006CF6D8 /* Embed Frameworks */,
 				5C076C0CBCC61A83AF9F1215 /* [CP] Embed Pods Frameworks */,
 				9CA67151327A3D1350F6D4BE /* [CP] Copy Pods Resources */,
 			);

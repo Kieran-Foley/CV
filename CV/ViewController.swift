@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import KMFButtons
 import Firebase
 
 class ViewController: UIViewController, UITextFieldDelegate {
@@ -19,7 +18,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var usersCompany: UITextField!
     @IBOutlet var loginButton: UIButton!
     
-    var ref: DatabaseReference!
+    // Declarations
+    var databaseRoot: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(tap)
     }
     
-    
     func redraw() {
         buttonDesign(button: loginButton)
 
@@ -44,7 +43,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         self.view.backgroundColor = UIColor(patternImage: image)
         
-        pageTitle.text = "Welcome!\nI'm Kieran\nIt's Nice to meet you!"
+        pageTitle.text = "Welcome!\nI'm Kieran\nIt's nice to meet you!"
         usersNameLabel.text = "Name"
         usersNameLabel.textColor = UIColor.white
         usersName.placeholder = "..."
@@ -68,26 +67,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
             present(alert, animated: true, completion: nil)
         } else {
             // Store name and company name to Firebase.
-            // Stops optional chaining apply to usersname and company name before firebase implemtantion.
             guard let name = usersName.text, let companyName = usersCompany.text else {
                 return
             }
-            
-            ref = Database.database().reference()
-            
-            self.ref.child("users").setValue(name)
-            self.ref.child("Company").setValue(companyName)
+            databaseRoot = Database.database().reference()
+            let users = databaseRoot.child("users")
 
-            
-            
-            
+            // Create a reference to a new value in Firebase.
+            let ref = users.childByAutoId()
+            let userDetails = ["Name": name, "Company": companyName]
+            ref.setValue(userDetails)
             
             // If login is successful.
             performSegue(withIdentifier: "login", sender: self)
-            
         }
     }
-    
     
     // Function to design the button.
     func buttonDesign(button:UIButton) {
@@ -95,6 +89,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         button.backgroundColor = UIColor.green
         button.setTitle("Next", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
+        
     }
     
     // Function to dismiss keyboard when the user taps anywhere on screen.
