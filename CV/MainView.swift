@@ -8,12 +8,13 @@
 
 import UIKit
 import Firebase
+import JSQMessagesViewController
 
 class MainView: UIViewController {
 
-    @IBOutlet weak var button: UIButton!
-    
-    @IBOutlet weak var testView: UIView!
+    @IBOutlet var linkedInButton: UIButton!
+    @IBOutlet var tabBar: UIView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,23 +22,32 @@ class MainView: UIViewController {
     }
     
     func redraw() {
-        
-        guard let image = UIImage(named: "blurredBG.jpg") else {
-            return
+        linkedInButton.layer.cornerRadius = 35
+        linkedInButton.layer.borderWidth = 1
+        linkedInButton.layer.borderColor = UIColor.white.cgColor
+
+
+    
+    }
+
+    @IBAction func linkedInPress(_ sender: Any) {
+        if let url = URL(string: "https://www.linkedin.com/in/kieran-foley-130833138/") {
+            UIApplication.shared.open(url)
         }
-        
-        self.view.backgroundColor = UIColor(patternImage: image)
-        
-        button.layer.cornerRadius = 45
-        button.layer.borderColor = UIColor.black.cgColor
-        button.layer.borderWidth = 2
-        button.backgroundColor = UIColor.cyan
-        testView.backgroundColor = UIColor.cyan
-
-        
     }
-
-    @IBAction func buttonPressed(_ sender: Any) {
-        print("Pressed")
+    
+    @IBAction func CVPress(_ sender: Any) {
+        let url = Bundle.main.url(forResource: "FinalCV", withExtension: "pdf")
+        
+        if let url = url {
+            let webview = UIWebView(frame: self.view.frame)
+            let urlRequest = URLRequest(url: url)
+            webview.loadRequest(urlRequest)
+            view.addSubview(webview)
+        }
     }
+    
+    
+    
+    
 }

@@ -11,10 +11,7 @@ import Firebase
 
 class ViewController: UIViewController, UITextFieldDelegate {
     // Outlets
-    @IBOutlet var pageTitle: UILabel!
-    @IBOutlet var usersNameLabel: UILabel!
     @IBOutlet var usersName: UITextField!
-    @IBOutlet var usersCompanyLabel: UILabel!
     @IBOutlet var usersCompany: UITextField!
     @IBOutlet var loginButton: UIButton!
     
@@ -22,13 +19,36 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var databaseRoot: DatabaseReference!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
+        
         redraw()
         
         // Adds the text field delegates to call the dismiss keyboard on return function.
         self.usersCompany.delegate = self
         self.usersName.delegate = self
         
+        
+        // Adds the text field delegates to call the dismiss keyboard on return function.
+        self.usersCompany.delegate = self
+        self.usersName.delegate = self
+        
+        // Creates bottom borders for textfields.
+        let nameBorder = CALayer()
+        let companyBorder = CALayer()
+        let width = CGFloat(2.0)
+        nameBorder.borderColor = UIColor.white.cgColor
+        companyBorder.borderColor = UIColor.white.cgColor
+        nameBorder.frame = CGRect(x: 0, y: usersName.frame.size.height - width, width:  usersName.frame.size.width, height: usersName.frame.size.height)
+        nameBorder.borderWidth = width
+        companyBorder.frame = CGRect(x: 0, y: usersCompany.frame.size.height - width, width:  usersCompany.frame.size.width, height: usersCompany.frame.size.height)
+        companyBorder.borderWidth = width
+        
+        // Applies the bottom borders to textfields.
+        usersName.layer.addSublayer(nameBorder)
+        usersName.layer.masksToBounds = true
+        usersCompany.layer.addSublayer(companyBorder)
+        usersCompany.layer.masksToBounds = true
+                
         // Allows user to close the keyboard by tapping anywhere else on the screen.
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -37,19 +57,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func redraw() {
         buttonDesign(button: loginButton)
 
-        guard let image = UIImage(named: "blurredBG.jpg") else {
-            return
-        }
-        
-        self.view.backgroundColor = UIColor(patternImage: image)
-        
-        pageTitle.text = "Welcome!\nI'm Kieran\nIt's nice to meet you!"
-        usersNameLabel.text = "Name"
-        usersNameLabel.textColor = UIColor.white
-        usersName.placeholder = "..."
-        usersCompanyLabel.text = "Company name"
-        usersCompanyLabel.textColor = UIColor.white
-        usersCompany.placeholder = "..."
+        usersName.placeholder = "Name"
+        usersCompany.placeholder = "Company"
     }
     
     @IBAction func nextButtonPushed(_ sender: Any) {
@@ -85,8 +94,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // Function to design the button.
     func buttonDesign(button:UIButton) {
-        button.layer.cornerRadius = 25
-        button.backgroundColor = UIColor.green
+//        button.layer.cornerRadius = 30
+        button.backgroundColor = UIColor.black
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.white.cgColor
         button.setTitle("Next", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
         
@@ -106,3 +117,44 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
 }
 
+
+
+/* Other UI Designs
+ 
+ ************************************** ************************************** ************************************** **************************************
+ /* Changes text fields to just have bottom borders.  */
+ 
+ // Adds the text field delegates to call the dismiss keyboard on return function.
+ self.usersCompany.delegate = self
+ self.usersName.delegate = self
+ 
+ // Creates bottom borders for textfields.
+ let nameBorder = CALayer()
+ let companyBorder = CALayer()
+ let width = CGFloat(2.0)
+ nameBorder.borderColor = UIColor.white.cgColor
+ companyBorder.borderColor = UIColor.white.cgColor
+ nameBorder.frame = CGRect(x: 0, y: usersName.frame.size.height - width, width:  usersName.frame.size.width, height: usersName.frame.size.height)
+ nameBorder.borderWidth = width
+ companyBorder.frame = CGRect(x: 0, y: usersCompany.frame.size.height - width, width:  usersCompany.frame.size.width, height: usersCompany.frame.size.height)
+ companyBorder.borderWidth = width
+ 
+ // Applies the bottom borders to textfields.
+ usersName.layer.addSublayer(nameBorder)
+ usersName.layer.masksToBounds = true
+ usersCompany.layer.addSublayer(companyBorder)
+ usersCompany.layer.masksToBounds = true
+ 
+ 
+ 
+ 
+ 
+ ************************************** ************************************** ************************************** **************************************
+ 
+ 
+ //        guard let image = UIImage(named: "blurredBG.jpg") else {
+ //            return
+ //        }
+ //
+ //        self.view.backgroundColor = UIColor(patternImage: image)
+ */
