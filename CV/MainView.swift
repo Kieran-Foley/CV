@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import WebKit
 import JSQMessagesViewController
 
 class MainView: UIViewController {
@@ -15,16 +16,30 @@ class MainView: UIViewController {
     @IBOutlet var linkedInButton: UIButton!
     @IBOutlet var tabBar: UIView!
 
+    @IBOutlet var webView: WKWebView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         redraw()
+        
+        let path = Bundle.main.path(forResource: "FinalCV", ofType: "pdf")
+        // REMOVE FORCE UNWRAP
+        let url = URL(fileURLWithPath: path!)
+        let request = URLRequest(url: url)
+        
+        webView.load(request)
+        
+        
+        
+        
     }
     
     func redraw() {
         linkedInButton.layer.cornerRadius = 35
-        linkedInButton.layer.borderWidth = 1
-        linkedInButton.layer.borderColor = UIColor.white.cgColor
+        linkedInButton.layer.borderWidth = 3
+        linkedInButton.layer.borderColor = UIColor.black.cgColor
 
 
     
@@ -37,14 +52,7 @@ class MainView: UIViewController {
     }
     
     @IBAction func CVPress(_ sender: Any) {
-        let url = Bundle.main.url(forResource: "FinalCV", withExtension: "pdf")
-        
-        if let url = url {
-            let webview = UIWebView(frame: self.view.frame)
-            let urlRequest = URLRequest(url: url)
-            webview.loadRequest(urlRequest)
-            view.addSubview(webview)
-        }
+
     }
     
     

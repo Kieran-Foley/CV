@@ -32,22 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.usersCompany.delegate = self
         self.usersName.delegate = self
         
-        // Creates bottom borders for textfields.
-        let nameBorder = CALayer()
-        let companyBorder = CALayer()
-        let width = CGFloat(2.0)
-        nameBorder.borderColor = UIColor.white.cgColor
-        companyBorder.borderColor = UIColor.white.cgColor
-        nameBorder.frame = CGRect(x: 0, y: usersName.frame.size.height - width, width:  usersName.frame.size.width, height: usersName.frame.size.height)
-        nameBorder.borderWidth = width
-        companyBorder.frame = CGRect(x: 0, y: usersCompany.frame.size.height - width, width:  usersCompany.frame.size.width, height: usersCompany.frame.size.height)
-        companyBorder.borderWidth = width
-        
-        // Applies the bottom borders to textfields.
-        usersName.layer.addSublayer(nameBorder)
-        usersName.layer.masksToBounds = true
-        usersCompany.layer.addSublayer(companyBorder)
-        usersCompany.layer.masksToBounds = true
+
                 
         // Allows user to close the keyboard by tapping anywhere else on the screen.
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -57,8 +42,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func redraw() {
         buttonDesign(button: loginButton)
 
-        usersName.placeholder = "Name"
-        usersCompany.placeholder = "Company"
+        usersName.attributedPlaceholder = NSAttributedString(string: "Name...", attributes: [NSAttributedStringKey.foregroundColor:UIColor.white])
+        
+        usersCompany.attributedPlaceholder = NSAttributedString(string: "Company...", attributes: [NSAttributedStringKey.foregroundColor:UIColor.white])
     }
     
     @IBAction func nextButtonPushed(_ sender: Any) {
@@ -94,12 +80,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // Function to design the button.
     func buttonDesign(button:UIButton) {
-//        button.layer.cornerRadius = 30
-        button.backgroundColor = UIColor.black
+
+        button.setTitle("Next", for: .normal)
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.white.cgColor
-        button.setTitle("Next", for: .normal)
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.layer.cornerRadius = 2
         
     }
     
@@ -158,3 +143,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
  //
  //        self.view.backgroundColor = UIColor(patternImage: image)
  */
+
+
+
+
+
+// Creates bottom borders for textfields.
+//        let nameBorder = CALayer()
+//        let companyBorder = CALayer()
+//        let width = CGFloat(2.0)
+//        nameBorder.borderColor = UIColor.white.cgColor
+//        companyBorder.borderColor = UIColor.white.cgColor
+//        nameBorder.frame = CGRect(x: 0, y: usersName.frame.size.height - width, width:  usersName.frame.size.width, height: usersName.frame.size.height)
+//        nameBorder.borderWidth = width
+//        companyBorder.frame = CGRect(x: 0, y: usersCompany.frame.size.height - width, width:  usersCompany.frame.size.width, height: usersCompany.frame.size.height)
+//        companyBorder.borderWidth = width
+
+// Applies the bottom borders to textfields.
+//        usersName.layer.addSublayer(nameBorder)
+//        usersName.layer.masksToBounds = true
+//        usersCompany.layer.addSublayer(companyBorder)
+//        usersCompany.layer.masksToBounds = true
