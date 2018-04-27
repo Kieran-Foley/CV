@@ -218,10 +218,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="me" translatesAutoresizingMaskIntoConstraints="NO" id="ze6-bW-Nh4">
-                                <rect key="frame" x="234" y="178" width="125" height="125"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qBt-Uq-r0w"/>
@@ -229,7 +225,6 @@
                     <connections>
                         <outlet property="linkedIn" destination="DJz-eF-Sxx" id="54Y-D8-jL3"/>
                         <outlet property="logo" destination="Qqp-t8-YSh" id="Krj-Ii-3P1"/>
-                        <outlet property="profileImage" destination="ze6-bW-Nh4" id="wVH-vI-LbG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4zm-bD-faf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -538,7 +533,6 @@
         <image name="Linkedin logo text" width="256" height="256"/>
         <image name="Logo 1" width="510" height="499"/>
         <image name="Name Field border2 2" width="300" height="50"/>
-        <image name="me" width="1080" height="1080"/>
         <image name="skyBG" width="750" height="1382"/>
     </resources>
 </document>
