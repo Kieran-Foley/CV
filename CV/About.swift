@@ -15,6 +15,13 @@ class About: UIViewController {
     
     @IBOutlet var linkedIn: UIButton!
     @IBOutlet var logo: UIImageView!
+    
+    var swiftWheel:UIImageView!
+    var cppWheel:UIImageView!
+    var cWheel:UIImageView!
+    var gitWheel:UIImageView!
+    var webWheel:UIImageView!
+
 
     
     // New instance of tabBar -> control the design / functionality
@@ -24,6 +31,8 @@ class About: UIViewController {
         super.viewDidLoad()
         // Designs the linkedIn button.
         customTabBar.redrawLinkedIn(button: linkedIn)
+        
+        logo.frame = CGRect(x: 112, y: 20, width: 150, height: 150)
 
         guard let me:UIImage = UIImage(named: "me.jpeg") else {
             return
@@ -38,6 +47,58 @@ class About: UIViewController {
         profileImage.layer.borderWidth = 2
         profileImage.frame = CGRect(x: -150, y: 178, width: 125, height: 125)
         self.view.addSubview(profileImage)
+        
+        // Swift Wheel init.
+        guard let swift:UIImage = UIImage(named: "swiftWheel.png") else {
+            return
+        }
+        swiftWheel = UIImageView(image: swift)
+        swiftWheel.layer.masksToBounds = true
+        swiftWheel.alpha = 0
+        swiftWheel.frame = CGRect(x: 40, y: 315, width: 75, height: 75)
+        self.view.addSubview(swiftWheel)
+        
+        // C++ Wheel init.
+        guard let cpp:UIImage = UIImage(named: "c++.png") else {
+            return
+        }
+        cppWheel = UIImageView(image: cpp)
+        cppWheel.layer.masksToBounds = true
+        cppWheel.alpha = 0
+        cppWheel.frame = CGRect(x: 40, y: 413.75, width: 75, height: 75)
+        self.view.addSubview(cppWheel)
+        
+        // Git Wheel init.
+        guard let git:UIImage = UIImage(named: "Git.png") else {
+            return
+        }
+        gitWheel = UIImageView(image: git)
+        gitWheel.layer.masksToBounds = true
+        gitWheel.alpha = 0
+        gitWheel.frame = CGRect(x: 40, y: 512.5, width: 75, height: 75)
+        self.view.addSubview(gitWheel)
+        
+        // Web Wheel init.
+        guard let web:UIImage = UIImage(named: "web.png") else {
+            return
+        }
+        webWheel = UIImageView(image: web)
+        webWheel.layer.masksToBounds = true
+        webWheel.alpha = 0
+        webWheel.frame = CGRect(x: 150, y: 512.5, width: 75, height: 75)
+        self.view.addSubview(webWheel)
+
+        // C Wheel init.
+        guard let c:UIImage = UIImage(named: "c.png") else {
+            return
+        }
+        cWheel = UIImageView(image: c)
+        cWheel.layer.masksToBounds = true
+        cWheel.alpha = 0
+        cWheel.frame = CGRect(x: 260, y: 512.5, width: 75, height: 75)
+        self.view.addSubview(cWheel)
+        
+        
     
     }
     
@@ -69,22 +130,22 @@ class About: UIViewController {
         }
         
         // First paragraph - Adjacent to profile picture
-        let openingText = UILabel(frame: CGRect(x: 19, y: 147.5, width: 207, height: 150))
-        let theString = "My names's Kieran \u{1F44B} I'm a passionate 23 year old software developer currently studying at UWE Bristol."
+        let openingText = UILabel(frame: CGRect(x: 19, y: 147.5, width: 207, height: 170))
+        let theString = "My names's Kieran \u{1F44B} I'm a passionate 23 year old software developer currently studying BSc - Computing at UWE Bristol."
         let attributedString = NSMutableAttributedString(string: theString, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter", size: 19.0)!])
         // Bold "Kieran"
         let boldFontAttribute = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter-Bold", size: 19.0)!]
         // Red "UWE Bristol"
         let redText = [NSAttributedStringKey.foregroundColor: UIColor.red, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter", size: 19.0)!]
         attributedString.addAttributes(boldFontAttribute, range: NSMakeRange(11, 6))
-        attributedString.addAttributes(redText, range: NSMakeRange(91, 11))
+        attributedString.addAttributes(redText, range: NSMakeRange(107, 11))
         openingText.numberOfLines = 10
         openingText.attributedText = attributedString
         self.view.addSubview(openingText)
         
         // First paragraph - Adjacent to profile picture
-        let skillsLabel = UILabel(frame: CGRect(x: 150, y: 300, width: 210, height: 150))
-        let skillsText = "My skills include iOS development, web technologies, C/C++ proggramming and database integration."
+        let skillsLabel = UILabel(frame: CGRect(x: 150, y: 300, width: 210, height: 200))
+        let skillsText = "My skills include iOS development, web technologies, C/C++ programming, Git and database integration. These wheels portray my experience in these technologies."
         let attributedSkillsText = NSMutableAttributedString(string: skillsText, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter", size: 19.0)!])
         skillsLabel.numberOfLines = 10
         skillsLabel.attributedText = attributedSkillsText
@@ -93,7 +154,7 @@ class About: UIViewController {
         
         
         UIView.animate(withDuration: 1.5, animations: {
-            profileImage.frame = CGRect(x: 234, y: 160, width: 125, height: 125)
+            profileImage.frame = CGRect(x: 234, y: 160, width: 135, height: 135)
             var rotationAnimation = CABasicAnimation()
             rotationAnimation = CABasicAnimation.init(keyPath: "transform.rotation.z")
             rotationAnimation.toValue = NSNumber(value: (Double.pi))
@@ -103,19 +164,16 @@ class About: UIViewController {
             profileImage.layer.add(rotationAnimation, forKey: "rotationAnimation")
         })
         
-//        var logosView:UIImageView!
-//        let logoImages:[UIImage] = [UIImage(named: "swiftLogo.png")!, UIImage(named: "xcodeLogo.png")!, UIImage(named: "htmlLogo.png")!, UIImage(named: "c++Logo.png")!]
-//        logosView.frame = CGRect(x: -150, y: 300, width: 125, height: 125)
-//        
-//        UIView.animate(withDuration: 1.5, animations: {
-//            logosView.frame = CGRect(x: 75, y: 300, width: 125, height: 125)
-//            logosView = UIImageView(image: logoImages[0])
-//        }) { _ in
-//            UIView.animate(withDuration: 1.5, delay: 0.25, options: [.autoreverse, .repeat], animations: {
-//                logosView.frame = CGRect(x: 75, y: 300, width: 125, height: 125)
-//                logosView = UIImageView(image: logoImages[1])
-//            })
-//        }
+        UIView.animate(withDuration: 3, animations: {
+            self.swiftWheel.alpha = 1.0
+            self.cppWheel.alpha = 1.0
+            self.gitWheel.alpha = 1.0
+            self.webWheel.alpha = 1.0
+            self.cWheel.alpha = 1.0
+        })
+        
+        
+        
     }
 
     // Declares the actions of all 5 tab bar buttons.
