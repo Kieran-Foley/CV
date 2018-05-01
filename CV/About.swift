@@ -32,7 +32,7 @@ class About: UIViewController {
         // Designs the linkedIn button.
         customTabBar.redrawLinkedIn(button: linkedIn)
         
-        logo.frame = CGRect(x: 112, y: 20, width: 150, height: 150)
+        logo.frame = CGRect(x: self.view.frame.width/2-75, y: 20, width: 150, height: 150)
 
         guard let me:UIImage = UIImage(named: "me.jpeg") else {
             return
@@ -55,7 +55,7 @@ class About: UIViewController {
         swiftWheel = UIImageView(image: swift)
         swiftWheel.layer.masksToBounds = true
         swiftWheel.alpha = 0
-        swiftWheel.frame = CGRect(x: 40, y: 315, width: 75, height: 75)
+        swiftWheel.frame = CGRect(x: 40, y: 320, width: 75, height: 75)
         self.view.addSubview(swiftWheel)
         
         // C++ Wheel init.
@@ -65,7 +65,7 @@ class About: UIViewController {
         cppWheel = UIImageView(image: cpp)
         cppWheel.layer.masksToBounds = true
         cppWheel.alpha = 0
-        cppWheel.frame = CGRect(x: 40, y: 413.75, width: 75, height: 75)
+        cppWheel.frame = CGRect(x: 40, y: 418.75, width: 75, height: 75)
         self.view.addSubview(cppWheel)
         
         // Git Wheel init.
@@ -75,7 +75,7 @@ class About: UIViewController {
         gitWheel = UIImageView(image: git)
         gitWheel.layer.masksToBounds = true
         gitWheel.alpha = 0
-        gitWheel.frame = CGRect(x: 40, y: 512.5, width: 75, height: 75)
+        gitWheel.frame = CGRect(x: 40, y: 517.5, width: 75, height: 75)
         self.view.addSubview(gitWheel)
         
         // Web Wheel init.
@@ -85,7 +85,7 @@ class About: UIViewController {
         webWheel = UIImageView(image: web)
         webWheel.layer.masksToBounds = true
         webWheel.alpha = 0
-        webWheel.frame = CGRect(x: 150, y: 512.5, width: 75, height: 75)
+        webWheel.frame = CGRect(x: self.view.frame.width/2-37.5, y: 517.5, width: 75, height: 75)
         self.view.addSubview(webWheel)
 
         // C Wheel init.
@@ -95,7 +95,7 @@ class About: UIViewController {
         cWheel = UIImageView(image: c)
         cWheel.layer.masksToBounds = true
         cWheel.alpha = 0
-        cWheel.frame = CGRect(x: 260, y: 512.5, width: 75, height: 75)
+        cWheel.frame = CGRect(x: self.view.frame.width-115, y: 517.5, width: 75, height: 75)
         self.view.addSubview(cWheel)
         
         
@@ -122,11 +122,11 @@ class About: UIViewController {
         }
         // "Hi ... Let me"
         UIView.animate(withDuration: 2.0) {
-            CVText1.frame = CGRect(x: 100, y: 30, width: 350, height: 75)
+            CVText1.frame = CGRect(x: self.view.frame.width/2-90, y: 30, width: 350, height: 75)
         }
         // "Introduce Myself"
         UIView.animate(withDuration: 2.0) {
-            CVText2.frame = CGRect(x: 140, y: 60, width: 350, height: 75)
+            CVText2.frame = CGRect(x: self.view.frame.width/2-50, y: 60, width: 350, height: 75)
         }
         
         // First paragraph - Adjacent to profile picture
@@ -144,17 +144,18 @@ class About: UIViewController {
         self.view.addSubview(openingText)
         
         // First paragraph - Adjacent to profile picture
-        let skillsLabel = UILabel(frame: CGRect(x: 150, y: 300, width: 210, height: 200))
+        let skillsLabel = UILabel(frame: CGRect(x: self.view.frame.width-230, y: 300, width: 210, height: 200))
         let skillsText = "My skills include iOS development, web technologies, C/C++ programming, Git and database integration. These wheels portray my experience in these technologies."
         let attributedSkillsText = NSMutableAttributedString(string: skillsText, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter", size: 19.0)!])
         skillsLabel.numberOfLines = 10
+        skillsLabel.textAlignment = NSTextAlignment.right
         skillsLabel.attributedText = attributedSkillsText
         self.view.addSubview(skillsLabel)
         
         
         
         UIView.animate(withDuration: 1.5, animations: {
-            profileImage.frame = CGRect(x: 234, y: 160, width: 135, height: 135)
+            profileImage.frame = CGRect(x: self.view.frame.width-155, y: 160, width: 135, height: 135)
             var rotationAnimation = CABasicAnimation()
             rotationAnimation = CABasicAnimation.init(keyPath: "transform.rotation.z")
             rotationAnimation.toValue = NSNumber(value: (Double.pi))

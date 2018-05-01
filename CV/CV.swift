@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 import WebKit
-import JSQMessagesViewController
 
 
 class CV: UIViewController {
@@ -17,8 +16,6 @@ class CV: UIViewController {
     @IBOutlet var linkedInButton: UIButton!
     @IBOutlet var webView: WKWebView!
     @IBOutlet var logo: UIImageView!
-    
-    
     
     // New instance of tabBar -> control the design / functionality
     let customTabBar = customTabBarController()
@@ -28,14 +25,12 @@ class CV: UIViewController {
         
         // Designs the linkedIn button.
         customTabBar.redrawLinkedIn(button: linkedInButton)
-
         let path = Bundle.main.path(forResource: "CV", ofType: "pdf")
         // REMOVE FORCE UNWRAP
         let url = URL(fileURLWithPath: path!)
+        
         let request = URLRequest(url: url)
         webView.load(request)
-        
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,7 +56,7 @@ class CV: UIViewController {
         
         // CV Webview
         UIView.animate(withDuration: 2.0) {
-            self.webView.frame = CGRect(x: 0, y: 140, width: 375, height: 449)
+            self.webView.frame = CGRect(x: 0, y: 140, width: self.view.frame.width, height: self.view.frame.height-225)
         }
         
         // CURRICULUM text
