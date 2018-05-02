@@ -298,81 +298,114 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DQg-MV-eWQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DQg-MV-eWQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s6g-b8-ZJU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s6g-b8-ZJU">
                                 <rect key="frame" x="0.0" y="614" width="375" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="3fG-81-HB4"/>
+                                </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="veg-Uy-Hqm">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veg-Uy-Hqm">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zch-Rw-fer">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zch-Rw-fer">
                                         <rect key="frame" x="152" y="-21" width="70" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.070588235289999995" green="0.48627450979999998" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="YAm-Bk-kDm"/>
+                                            <constraint firstAttribute="height" constant="70" id="ZYj-8K-7lH"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" backgroundImage="Linkedin logo text"/>
                                         <connections>
                                             <action selector="tabBarButtonPushed:" destination="eth-BR-bb4" eventType="touchUpInside" id="K38-Yf-Bl5"/>
                                             <action selector="tabBarButtonPushed:" destination="jf3-Aw-Pq0" eventType="touchUpInside" id="N0L-N4-dGg"/>
+                                            <action selector="tabBarButtonPushed:" destination="jad-SS-480" eventType="touchUpInside" id="xVh-3i-JM1"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTn-eh-RTC">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTn-eh-RTC">
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="76" id="Owm-6H-7Tq"/>
+                                            <constraint firstAttribute="height" constant="49" id="oxS-gX-zy2"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                                         <state key="normal" title="CV">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="tabBarButtonPushed:" destination="jad-SS-480" eventType="touchUpInside" id="bFY-7Q-VdP"/>
                                             <action selector="tabBarButtonPushed:" destination="jf3-Aw-Pq0" eventType="touchUpInside" id="nYJ-gT-iUX"/>
                                             <action selector="tabBarButtonPushed:" destination="eth-BR-bb4" eventType="touchUpInside" id="tKh-vQ-WNB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1d-vg-mqn">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1d-vg-mqn">
                                         <rect key="frame" x="76" y="0.0" width="76" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="Igh-f2-HEd"/>
+                                            <constraint firstAttribute="width" constant="76" id="mrR-K1-wJq"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                                         <state key="normal" title="About">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="tabBarButtonPushed:" destination="jad-SS-480" eventType="touchUpInside" id="8xT-qq-0Ak"/>
                                             <action selector="tabBarButtonPushed:" destination="eth-BR-bb4" eventType="touchUpInside" id="ESG-3K-2vv"/>
                                             <action selector="tabBarButtonPushed:" destination="jf3-Aw-Pq0" eventType="touchUpInside" id="LF7-Jj-nIe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byB-4r-7u6">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byB-4r-7u6">
                                         <rect key="frame" x="299" y="0.0" width="76" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="31A-TD-JAJ"/>
+                                            <constraint firstAttribute="width" constant="76" id="6OC-ks-VRY"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                                         <state key="normal" title="Contact">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="tabBarButtonPushed:" destination="jad-SS-480" eventType="touchUpInside" id="6UO-fc-GhW"/>
                                             <action selector="tabBarButtonPushed:" destination="eth-BR-bb4" eventType="touchUpInside" id="C79-OY-h2U"/>
                                             <action selector="tabBarButtonPushed:" destination="jf3-Aw-Pq0" eventType="touchUpInside" id="j4L-Mx-UKy"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oS5-qB-70o">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oS5-qB-70o">
                                         <rect key="frame" x="222" y="0.0" width="76" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="iXU-fY-4Uk"/>
+                                            <constraint firstAttribute="width" constant="76" id="wcl-Rr-2xw"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                                         <state key="normal" title="Portfolio">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="tabBarButtonPushed:" destination="eth-BR-bb4" eventType="touchUpInside" id="1Qe-QB-Fez"/>
+                                            <action selector="tabBarButtonPushed:" destination="jad-SS-480" eventType="touchUpInside" id="2EK-TJ-NnM"/>
                                             <action selector="tabBarButtonPushed:" destination="jf3-Aw-Pq0" eventType="touchUpInside" id="Jy1-91-UNA"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="oS5-qB-70o" secondAttribute="bottom" id="2lR-xG-mK2"/>
+                                    <constraint firstAttribute="bottom" secondItem="I1d-vg-mqn" secondAttribute="bottom" id="32B-7r-0pj"/>
+                                    <constraint firstAttribute="bottom" secondItem="zch-Rw-fer" secondAttribute="bottom" id="H1y-m5-fuY"/>
+                                    <constraint firstItem="xTn-eh-RTC" firstAttribute="leading" secondItem="veg-Uy-Hqm" secondAttribute="leading" id="KZQ-0a-pqY"/>
+                                    <constraint firstAttribute="trailing" secondItem="byB-4r-7u6" secondAttribute="trailing" id="NvK-HH-08V"/>
+                                    <constraint firstAttribute="height" constant="49" id="PX7-q7-XaY"/>
+                                    <constraint firstAttribute="bottom" secondItem="byB-4r-7u6" secondAttribute="bottom" id="RQS-uo-rt8"/>
+                                    <constraint firstItem="zch-Rw-fer" firstAttribute="leading" secondItem="I1d-vg-mqn" secondAttribute="trailing" id="fdC-wT-t9y"/>
+                                    <constraint firstItem="oS5-qB-70o" firstAttribute="leading" secondItem="zch-Rw-fer" secondAttribute="trailing" id="qwe-GZ-mdU"/>
+                                    <constraint firstItem="zch-Rw-fer" firstAttribute="centerX" secondItem="veg-Uy-Hqm" secondAttribute="centerX" id="sbM-qf-jsJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="xTn-eh-RTC" secondAttribute="bottom" id="sjB-Tx-8PW"/>
+                                </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo 1" translatesAutoresizingMaskIntoConstraints="NO" id="uhf-8e-pkf">
                                 <rect key="frame" x="112" y="20" width="150" height="150"/>
@@ -380,8 +413,24 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DQg-MV-eWQ" firstAttribute="bottom" secondItem="vRR-iH-YTH" secondAttribute="bottom" id="6gp-O5-zkm"/>
+                            <constraint firstItem="DQg-MV-eWQ" firstAttribute="top" secondItem="xEH-gf-2mH" secondAttribute="top" id="9nb-h2-jbx"/>
+                            <constraint firstItem="DQg-MV-eWQ" firstAttribute="leading" secondItem="vRR-iH-YTH" secondAttribute="leading" id="9s0-wZ-0pr"/>
+                            <constraint firstItem="veg-Uy-Hqm" firstAttribute="bottom" secondItem="vRR-iH-YTH" secondAttribute="bottom" id="Chd-M0-tqM"/>
+                            <constraint firstItem="s6g-b8-ZJU" firstAttribute="trailing" secondItem="vRR-iH-YTH" secondAttribute="trailing" id="Gme-Cp-nLo"/>
+                            <constraint firstItem="veg-Uy-Hqm" firstAttribute="trailing" secondItem="vRR-iH-YTH" secondAttribute="trailing" id="HG0-Ll-dkI"/>
+                            <constraint firstItem="veg-Uy-Hqm" firstAttribute="leading" secondItem="vRR-iH-YTH" secondAttribute="leading" id="J1d-Il-w8r"/>
+                            <constraint firstItem="s6g-b8-ZJU" firstAttribute="leading" secondItem="vRR-iH-YTH" secondAttribute="leading" id="mwc-Ne-ZUC"/>
+                            <constraint firstItem="s6g-b8-ZJU" firstAttribute="bottom" secondItem="vRR-iH-YTH" secondAttribute="bottom" id="uxX-AH-QeR"/>
+                            <constraint firstItem="DQg-MV-eWQ" firstAttribute="trailing" secondItem="vRR-iH-YTH" secondAttribute="trailing" id="wZQ-h1-a5b"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vRR-iH-YTH"/>
                     </view>
+                    <connections>
+                        <outlet property="linkedInButton" destination="zch-Rw-fer" id="bPM-Gi-gJc"/>
+                        <outlet property="logo" destination="uhf-8e-pkf" id="edo-7z-WJa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCq-u0-vT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
