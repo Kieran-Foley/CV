@@ -42,10 +42,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         /* Animations */
         // Logo 'Pulsing' animation
         UIView.animate(withDuration: 1.5, animations: {
-            self.logo.frame = CGRect(x: 125, y: 58, width: 125, height: 125)
+            self.logo.frame = CGRect(x: self.view.frame.width/2-62.5, y: 58, width: 125, height: 125)
         }) { _ in
             UIView.animate(withDuration: 1.5, delay: 0.25, options: [.autoreverse, .repeat], animations: {
-                self.logo.frame = CGRect(x: 112, y: 45, width: 150, height: 150)
+                self.logo.frame = CGRect(x: self.view.frame.width/2-75, y: 45, width: 150, height: 150)
             })
         }
     }
@@ -55,6 +55,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         buttonDesign(button: loginButton)
         usersName.attributedPlaceholder = NSAttributedString(string: "Name...", attributes: [NSAttributedStringKey.foregroundColor:UIColor.white])
         usersCompany.attributedPlaceholder = NSAttributedString(string: "Company...", attributes: [NSAttributedStringKey.foregroundColor:UIColor.white])
+        
     }
     
     @IBAction func nextButtonPushed(_ sender: Any) {
@@ -97,7 +98,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         button.setTitle("Next", for: .normal)
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.white.cgColor
-        button.layer.cornerRadius = 2
+        button.layer.cornerRadius = 10
     }
     
     // Function to dismiss keyboard when the user taps anywhere on screen.
