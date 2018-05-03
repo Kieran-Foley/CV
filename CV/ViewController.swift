@@ -25,6 +25,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()        
         
         redraw()
+        
+        // Sets original location of logo
+        logo.frame = CGRect(x: self.view.frame.width/2-75, y: 45, width: 150, height: 150)
+        
         // Adds the text field delegates to call the dismiss keyboard on return function.
         self.usersCompany.delegate = self
         self.usersName.delegate = self

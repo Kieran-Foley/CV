@@ -20,11 +20,11 @@ class Contact: UIViewController, MFMailComposeViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Sets original location of logo
+        logo.frame = CGRect(x: self.view.frame.width/2-75, y: 20, width: 150, height: 150)
+        
         // Design's the linkedIn button
         customTabBar.redrawLinkedIn(button: linkedInButton)
-        
-        // Set the position for the logo
-        logo.frame = CGRect(x: self.view.frame.width/2-75, y: 20, width: 150, height: 150)
         
         // Main text label
         let headerText = UILabel(frame: CGRect(x: self.view.frame.width/2-162.5, y: 165, width: 325, height: 150))
@@ -115,6 +115,18 @@ class Contact: UIViewController, MFMailComposeViewControllerDelegate {
         self.view.addSubview(facebookButton)
         facebookButton.addTarget(self, action: #selector(self.facebookButtonPushed), for: .touchUpInside)
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        /* Animations */
+        // Logo 'Pulsing' animation
+        UIView.animate(withDuration: 1.5, animations: {
+            self.logo.frame = CGRect(x: self.view.frame.width/2-62.5, y: 38, width: 125, height: 125)
+        }) { _ in
+            UIView.animate(withDuration: 1.5, delay: 0.25, options: [.autoreverse, .repeat], animations: {
+                self.logo.frame = CGRect(x: self.view.frame.width/2-75, y: 20, width: 150, height: 150)
+            })
+        }
     }
     
     // Phone image has been pushed, display call alert.

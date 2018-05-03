@@ -442,10 +442,10 @@
             </objects>
             <point key="canvasLocation" x="1437.5999999999999" y="-133.5832083958021"/>
         </scene>
-        <!--Portflio-->
+        <!--Portfolio-->
         <scene sceneID="cYb-dM-nII">
             <objects>
-                <viewController storyboardIdentifier="4" id="DM1-MK-EVu" customClass="Portflio" customModule="CV" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="4" id="DM1-MK-EVu" customClass="Portfolio" customModule="CV" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uBs-pC-2fe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -476,6 +476,7 @@
                                         </state>
                                         <connections>
                                             <action selector="tabBarButtonPushed:" destination="eth-BR-bb4" eventType="touchUpInside" id="Ydy-qv-kWg"/>
+                                            <action selector="tabBarButtonPushed:" destination="DM1-MK-EVu" eventType="touchUpInside" id="kdM-OU-poU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNQ-Yy-jfK">
@@ -488,6 +489,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="tabBarButtonPushed:" destination="DM1-MK-EVu" eventType="touchUpInside" id="LMX-9s-YfT"/>
                                             <action selector="tabBarButtonPushed:" destination="eth-BR-bb4" eventType="touchUpInside" id="xaK-Od-v0N"/>
                                         </connections>
                                     </button>
@@ -503,6 +505,7 @@
                                         </state>
                                         <connections>
                                             <action selector="tabBarButtonPushed:" destination="eth-BR-bb4" eventType="touchUpInside" id="NdO-lU-MSc"/>
+                                            <action selector="tabBarButtonPushed:" destination="DM1-MK-EVu" eventType="touchUpInside" id="hIx-UL-mP7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xH8-UA-Pc3">
@@ -516,6 +519,7 @@
                                         </state>
                                         <connections>
                                             <action selector="tabBarButtonPushed:" destination="eth-BR-bb4" eventType="touchUpInside" id="fqT-x4-D9P"/>
+                                            <action selector="tabBarButtonPushed:" destination="DM1-MK-EVu" eventType="touchUpInside" id="kNE-Bm-OuS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4X-Pf-xj3">
@@ -529,6 +533,7 @@
                                         <state key="normal" backgroundImage="Linkedin logo text"/>
                                         <connections>
                                             <action selector="tabBarButtonPushed:" destination="eth-BR-bb4" eventType="touchUpInside" id="1DF-Or-swh"/>
+                                            <action selector="tabBarButtonPushed:" destination="DM1-MK-EVu" eventType="touchUpInside" id="faW-TH-7zG"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -569,6 +574,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n8t-PC-kFc"/>
                     </view>
+                    <connections>
+                        <outlet property="linkedInButton" destination="I4X-Pf-xj3" id="x6O-I1-mCH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrx-1W-cb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
