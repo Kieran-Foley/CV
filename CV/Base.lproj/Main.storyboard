@@ -87,14 +87,6 @@
                                 <rect key="frame" x="112" y="45" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcO-fj-dPs">
-                                <rect key="frame" x="168" y="546" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="jf3-Aw-Pq0" kind="show" id="RTs-mW-K7x"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSQ-zr-zKi">
                                 <rect key="frame" x="37" y="420" width="300" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -108,6 +100,14 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AKe-ym-uAP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcO-fj-dPs">
+                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="jf3-Aw-Pq0" kind="show" id="RTs-mW-K7x"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -558,6 +558,11 @@
                                 <rect key="frame" x="112" y="20" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BWr-CY-Mcd">
+                                <rect key="frame" x="16" y="172" width="343" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -575,12 +580,14 @@
                         <viewLayoutGuide key="safeArea" id="n8t-PC-kFc"/>
                     </view>
                     <connections>
+                        <outlet property="buttonView" destination="BWr-CY-Mcd" id="r2v-kB-oX8"/>
                         <outlet property="linkedInButton" destination="I4X-Pf-xj3" id="x6O-I1-mCH"/>
+                        <outlet property="logo" destination="zIM-L8-vqp" id="yvT-uX-9tr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrx-1W-cb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="530"/>
+            <point key="canvasLocation" x="1437.5999999999999" y="529.38530734632684"/>
         </scene>
         <!--CV-->
         <scene sceneID="lQr-KY-BDt">
