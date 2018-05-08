@@ -35,40 +35,35 @@ class CV: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        // Sets attributes for "Curriculum" text.
-        let CVText1 = UILabel(frame: CGRect(x: 125, y: -125, width: 350, height: 75))
-        let CVText1Attributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter-Bold", size: 30.0)!]
-        CVText1.attributedText = NSAttributedString(string: "CURRICULUM", attributes: CVText1Attributes)
-        self.view.addSubview(CVText1)
-        
-        // Sets attributes and for "Vitae" text.
-        let CVText2 = UILabel(frame: CGRect(x: 500, y: 55, width: 350, height: 75))
-        let CVText2Attributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter-Bold", size: 30.0)!]
-        CVText2.attributedText = NSAttributedString(string: "VITAE", attributes: CVText2Attributes)
-        self.view.addSubview(CVText2)
+
+        // Sets attributes for "Projects" text.
+        let cvLabel = UILabel(frame: CGRect(x: 550, y: 45, width: 200, height: 75))
+        let cvText = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter-Bold", size: 30.0)!]
+        cvLabel.attributedText = NSAttributedString(string: "Curriculum\nVitae", attributes: cvText)
+        cvLabel.numberOfLines = 2
+        cvLabel.textAlignment = NSTextAlignment.center
+        self.view.addSubview(cvLabel)
         
         /* Animations */
-        // Logo
-        UIView.animate(withDuration: 2.0) {
-            self.logo.frame = CGRect(x: 10, y: 43, width: 75, height: 75)
-        }
         
+        UIView.animate(withDuration: 1, animations: {
+            self.logo.frame = CGRect(x: 10, y: 43, width: 75, height: 75)
+        }) { _ in
+            UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+                
+                cvLabel.frame = CGRect(x: self.view.frame.width/4*3-170, y: 45, width: 200, height: 75)
+                self.view.alpha = 1
+            }) { _ in
+                UIView.animate(withDuration: 0.4, delay: 0, options: [], animations: {
+                    cvLabel.frame = CGRect(x: self.view.frame.width/4*3-150, y: 45, width: 200, height: 75)
+                })
+            }
+        }
         // CV Webview
         UIView.animate(withDuration: 2.0) {
             self.webView.frame = CGRect(x: 0, y: 140, width: self.view.frame.width, height: self.view.frame.height-225)
         }
-        
-        // CURRICULUM text
-        UIView.animate(withDuration: 2.0) {
-            CVText1.frame = CGRect(x: 125, y: 30, width: 350, height: 75)
-        }
-        
-        // VITAE text
-        UIView.animate(withDuration: 2.0) {
-            CVText2.frame = CGRect(x: 185, y: 60, width: 350, height: 75)
-        }
-        
+    
     }
 
     // Declares the actions of all 5 tab bar buttons.
