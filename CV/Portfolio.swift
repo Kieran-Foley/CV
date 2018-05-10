@@ -70,6 +70,8 @@ class Portfolio: UIViewController {
         let gotDescLabel = UILabel(frame: CGRect(x: 10, y: self.subView1.frame.height/2, width: 235, height: 50))
         let gotDescText = "A simple quiz and trivia about the show Game of Thrones.\nClick image for Github link."
         let gotAttributedString = NSMutableAttributedString(string: gotDescText, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter", size: 13.0)!])
+        let boldGitAttribute = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter-Bold", size: 13.0)!]
+        gotAttributedString.addAttributes(boldGitAttribute, range: NSMakeRange(57, 28))
         gotDescLabel.attributedText = gotAttributedString
         gotDescLabel.textAlignment = NSTextAlignment.center
         gotDescLabel.numberOfLines = 4
@@ -104,6 +106,7 @@ class Portfolio: UIViewController {
         let mbDescLabel = UILabel(frame: CGRect(x: self.subView2.frame.width-245, y: self.subView1.frame.height/2-35, width: 235, height: 90))
         let mbDescText = "Programs and protocols installed into microBits using C++ including Morse code transmition, radiowave protocols a simple games.\nClick image for Github link."
         let mbAttributedString = NSMutableAttributedString(string: mbDescText, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter", size: 12.5)!])
+        mbAttributedString.addAttributes(boldGitAttribute, range: NSMakeRange(128, 28))
         mbDescLabel.attributedText = mbAttributedString
         mbDescLabel.textAlignment = NSTextAlignment.center
         mbDescLabel.numberOfLines = 5
@@ -142,6 +145,7 @@ class Portfolio: UIViewController {
         let messagingDescLabel = UILabel(frame: CGRect(x: 10, y: self.subView1.frame.height/2, width: 235, height: 50))
         let messagingDescText = "An instant messaging app using the Firebase framework.\nClick image for Github link."
         let messagingAttributedString = NSMutableAttributedString(string: messagingDescText, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter", size: 13.0)!])
+        messagingAttributedString.addAttributes(boldGitAttribute, range: NSMakeRange(54, 28))
         messagingDescLabel.attributedText = messagingAttributedString
         messagingDescLabel.textAlignment = NSTextAlignment.center
         messagingDescLabel.numberOfLines = 4
@@ -182,6 +186,7 @@ class Portfolio: UIViewController {
         let wsDescLabel = UILabel(frame: CGRect(x: self.subView2.frame.width-245, y: self.subView1.frame.height/2-10, width: 235, height: 90))
         let wsDescText = "My portfolio website.\nClick image for Github link."
         let wsAttributedDesc = NSMutableAttributedString(string: wsDescText, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter", size: 13.0)!])
+        wsAttributedDesc.addAttributes(boldGitAttribute, range: NSMakeRange(21, 28))
         wsDescLabel.attributedText = wsAttributedDesc
         wsDescLabel.textAlignment = NSTextAlignment.center
         wsDescLabel.numberOfLines = 5
