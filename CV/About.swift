@@ -21,8 +21,6 @@ class About: UIViewController {
     var cWheel:UIImageView!
     var gitWheel:UIImageView!
     var webWheel:UIImageView!
-
-
     
     // New instance of tabBar -> control the design / functionality
     let customTabBar = customTabBarController()
@@ -38,7 +36,6 @@ class About: UIViewController {
             return
         }
         profileImage = UIImageView(image: me)
-        
         
         // Sets profile image attributes
         profileImage.layer.masksToBounds = true
@@ -97,9 +94,6 @@ class About: UIViewController {
         cWheel.alpha = 0
         cWheel.frame = CGRect(x: self.view.frame.width-115, y: 517.5, width: 75, height: 75)
         self.view.addSubview(cWheel)
-        
-        
-    
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -152,8 +146,7 @@ class About: UIViewController {
         skillsLabel.attributedText = attributedSkillsText
         self.view.addSubview(skillsLabel)
         
-        
-        
+        // Spinning profile image animation
         UIView.animate(withDuration: 1.5, animations: {
             profileImage.frame = CGRect(x: self.view.frame.width-155, y: 160, width: 135, height: 135)
             var rotationAnimation = CABasicAnimation()
@@ -165,6 +158,7 @@ class About: UIViewController {
             profileImage.layer.add(rotationAnimation, forKey: "rotationAnimation")
         })
         
+        // Fade in skill sheels.
         UIView.animate(withDuration: 3, animations: {
             self.swiftWheel.alpha = 1.0
             self.cppWheel.alpha = 1.0
@@ -172,9 +166,6 @@ class About: UIViewController {
             self.webWheel.alpha = 1.0
             self.cWheel.alpha = 1.0
         })
-        
-        
-        
     }
 
     // Declares the actions of all 5 tab bar buttons.
@@ -194,5 +185,4 @@ class About: UIViewController {
             break
         }
     }
-
 }

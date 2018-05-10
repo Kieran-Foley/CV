@@ -109,12 +109,12 @@
 				6F13FDF3208F684100DA9593 /* About.swift */,
 				6F43206A208F79B800D16BDF /* Portfolio.swift */,
 				6F43206E208F7A1F00D16BDF /* Contact.swift */,
+				6F13FDF1208F59A300DA9593 /* customTabBarController.swift */,
 				6F2ED2FE2019D3F8006CF6D8 /* Main.storyboard */,
 				6F2ED3012019D3F8006CF6D8 /* Assets.xcassets */,
 				6F2ED3032019D3F8006CF6D8 /* LaunchScreen.storyboard */,
 				6F2ED3062019D3F8006CF6D8 /* Info.plist */,
 				6FEDFDED201E7FDB00FE3912 /* GoogleService-Info.plist */,
-				6F13FDF1208F59A300DA9593 /* customTabBarController.swift */,
 				6F94491A20921F3400FCD9EC /* CV.pdf */,
 			);
 			path = CV;

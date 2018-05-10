@@ -57,7 +57,6 @@ class Contact: UIViewController, MFMailComposeViewControllerDelegate {
         self.view.addSubview(phoneButton)
         phoneButton.addTarget(self, action: #selector(self.makeAPhoneCall), for: .touchUpInside)
         
-        
         // Email label
         let emailLabel = UILabel(frame: CGRect(x: self.view.frame.width-230, y: 400, width: 200, height: 50))
         let emailText = NSMutableAttributedString(string: "E-Mail", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter", size: 50.0)!])
@@ -114,7 +113,6 @@ class Contact: UIViewController, MFMailComposeViewControllerDelegate {
         facebookButton.frame = CGRect(x: self.view.frame.width/4*3-25 ,y: 535, width: 50, height: 50)
         self.view.addSubview(facebookButton)
         facebookButton.addTarget(self, action: #selector(self.facebookButtonPushed), for: .touchUpInside)
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -134,8 +132,6 @@ class Contact: UIViewController, MFMailComposeViewControllerDelegate {
         let url: NSURL = URL(string: "TEL://07715449909")! as NSURL
         UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
     }
-    
-    
     
     // Mail contact button has been pushed, compose a new email
     @objc func mailButtonPressed() {
@@ -167,7 +163,6 @@ class Contact: UIViewController, MFMailComposeViewControllerDelegate {
         controller.dismiss(animated: true, completion: nil)
     }
     
-    
     // Load up Instagram
     @objc func instagramButtonPushed()  {
         if let url = URL(string: "https://www.instagram.com/kfapplications/?hl=en") {
@@ -175,13 +170,11 @@ class Contact: UIViewController, MFMailComposeViewControllerDelegate {
         }
     }
     
-    
     // Load up Facebook
     @objc func facebookButtonPushed()  {
         if let url = URL(string: "https://www.facebook.com/kieran.foley.9") {
             UIApplication.shared.open(url)
         }
-        
     }
     
     // Declares the actions of all 5 tab bar buttons.
@@ -201,6 +194,4 @@ class Contact: UIViewController, MFMailComposeViewControllerDelegate {
             break
         }
     }
-    
 }
-

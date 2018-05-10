@@ -45,7 +45,6 @@ class CV: UIViewController {
         self.view.addSubview(cvLabel)
         
         /* Animations */
-        
         UIView.animate(withDuration: 1, animations: {
             self.logo.frame = CGRect(x: 10, y: 43, width: 75, height: 75)
         }) { _ in
@@ -63,7 +62,6 @@ class CV: UIViewController {
         UIView.animate(withDuration: 2.0) {
             self.webView.frame = CGRect(x: 0, y: 140, width: self.view.frame.width, height: self.view.frame.height-225)
         }
-    
     }
 
     // Declares the actions of all 5 tab bar buttons.
@@ -83,7 +81,4 @@ class CV: UIViewController {
             break
         }
     }
-    
-    
-    
 }

@@ -116,5 +116,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
-    
+    // Max 10 characters in the name text field.
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField ==  usersName{
+            let char = string.cString(using: String.Encoding.utf8)
+            let isBackSpace = strcmp(char, "\\b")
+            if isBackSpace == -92 {
+                return true
+            }
+            return textField.text!.count <= 9
+        }
+        return true
+    }
 }

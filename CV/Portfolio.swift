@@ -22,9 +22,6 @@ class Portfolio: UIViewController {
     @IBOutlet var subView3: UIView!
     @IBOutlet var subView4: UIView!
     
-    
-    
-    
     // New instance of tabBar -> control the design / functionality
     let customTabBar = customTabBarController()
     
@@ -117,6 +114,7 @@ class Portfolio: UIViewController {
         guard let mbImage:UIImage = UIImage(named: "microBitIcon.png") else {
             return
         }
+        
         mbButton.setImage(mbImage, for: .normal)
         mbButton.layer.cornerRadius = 14
         mbButton.layer.borderWidth = 2
@@ -125,9 +123,7 @@ class Portfolio: UIViewController {
         self.subView2.addSubview(mbButton)
         mbButton.addTarget(self, action: #selector(self.mbButtonPushed), for: .touchUpInside)
         
-        
         /************************************************************* Subview Three - Messaging *************************************************************/
-        
         // Label
         let messagingLabel = UILabel(frame: CGRect(x: 10 , y: 0, width: 225, height: 60))
         let messagingText = "Instant Messaging\nFirebase"
@@ -164,11 +160,7 @@ class Portfolio: UIViewController {
         self.subView3.addSubview(messagingButton)
         messagingButton.addTarget(self, action: #selector(self.messagingButtonPushed), for: .touchUpInside)
         
-        
         /************************************************************* Subview Four - Website *************************************************************/
-        
-        
-        
         // Label
         let wsLabel = UILabel(frame: CGRect(x: self.subView2.frame.width-245 , y: 0, width: 235, height: 60))
         let wsText = "Website\nHTML, CSS & JS"
@@ -204,7 +196,6 @@ class Portfolio: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         // Sets attributes for "Projects" text.
         let projectLabel = UILabel(frame: CGRect(x: 550, y: 45, width: 350, height: 75))
         let projectText = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter-Bold", size: 50.0)!]
@@ -212,7 +203,6 @@ class Portfolio: UIViewController {
         self.view.addSubview(projectLabel)
 
         /* Animations */
-        // Change position of logo -> fade in buttons.
         UIView.animate(withDuration: 1, animations: {
             self.logo.frame = CGRect(x: 10, y: 43, width: 75, height: 75)
         }) { _ in
@@ -228,6 +218,7 @@ class Portfolio: UIViewController {
         }
     }
     
+    // Got to requested sites
     @objc func gotButtonPushed() {
         if let url = URL(string: "https://github.com/Kieran-Foley/GOT-Trivia-QuizRepo") {
             UIApplication.shared.open(url)
@@ -263,5 +254,4 @@ class Portfolio: UIViewController {
             break
         }
     }
-
 }
